@@ -13,7 +13,8 @@ connectDB()
 
 // ;(async ()=>{
 //     try {
-//        await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
+//        lrt connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
+//        console.log(`\n MongoDB connected !! DB HOST : ${connectionInstance.connection.host }`);
 //        app.on("error",error=>{
 //         console.error("ERROR : ",error);
 //         throw error
@@ -27,3 +28,4 @@ connectDB()
 //         throw error
 //     }
 // })()
+

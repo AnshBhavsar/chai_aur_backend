@@ -14,3 +14,17 @@ app.use(express.urlencoded({extended : true,limit : '10kb'}))//encodes the url d
 // frontend and send encoded data to req.body 
 app.use(express.static('public'))//serves files efficiently which are present in public folder like html ,css , js amd png files
 app.use(cookieParser())
+
+
+//route import
+
+import router from './routers/user.routes.js'
+
+//routes declaration
+
+app.use("/api/v1/users",router)  
+
+// app.get("/users",(req,res)=>{}) this code is for directly handling the route by executing func 
+// while app.use("/users",userRouter) this code handle the route by first using the middleware and
+//  then sending the control to router and then router will execute the further logic 
+export default app
