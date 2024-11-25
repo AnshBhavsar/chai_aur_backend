@@ -10,7 +10,7 @@ cloudinary.config({
 
     // async function to Upload an image
 
-async function uploadOnCloudinary(localFilePath) {
+    export default async function uploadOnCloudinary(localFilePath) {
     try {
         if(!localFilePath) return null
         //uploading file on cloudinary
@@ -24,4 +24,3 @@ async function uploadOnCloudinary(localFilePath) {
     }
 }
 
-     
