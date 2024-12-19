@@ -1,6 +1,8 @@
 import { Router } from 'express';
-import registerUser from '../controllers/user.controller.js';
+import registerUser , {loginUser , logoutUser} from '../controllers/user.controller.js';
 import upload from "../middlewares/multer.middleware.js"
+import { verifyJWT } from '../middlewares/auth.middleware.js';
+
 const router = Router();
 
 // Define routes
@@ -16,6 +18,9 @@ router.route('/register').post(
         }
     ])
     ,registerUser);
+
+router.post("/logout",verifyJWT,logoutUser)
+router.post("/login",loginUser)
 // router.post('/register', (req, res) => {
 //     console.log('Test handler triggered');
 //     res.send('Test handler response');

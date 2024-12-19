@@ -23,7 +23,6 @@ import router from './routers/user.routes.js'
 //routes declaration
 
 app.use("/api/v1/users",router)  
-
 // app.get("/users",(req,res)=>{}) this code is for directly handling the route by executing func 
 // while app.use("/users",userRouter) this code handle the route by first using the middleware and
 //  then sending the control to router and then router will execute the further logic 
