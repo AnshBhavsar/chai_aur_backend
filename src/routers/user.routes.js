@@ -2,7 +2,7 @@ import { Router } from 'express';
 import registerUser , {loginUser , logoutUser} from '../controllers/user.controller.js';
 import upload from "../middlewares/multer.middleware.js"
 import { verifyJWT } from '../middlewares/auth.middleware.js';
-
+import { refreshAccessToken } from '../controllers/user.controller.js';
 const router = Router();
 
 // Define routes
@@ -21,6 +21,7 @@ router.route('/register').post(
 
 router.post("/logout",verifyJWT,logoutUser)
 router.post("/login",loginUser)
+router.post("/refresh-token" ,refreshAccessToken)
 // router.post('/register', (req, res) => {
 //     console.log('Test handler triggered');
 //     res.send('Test handler response');
